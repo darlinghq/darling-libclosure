@@ -11,6 +11,7 @@
 
 #ifndef _BLOCK_PRIVATE_H_
 #define _BLOCK_PRIVATE_H_
+#define BLOCK_EXPORT
 
 #include <Availability.h>
 #include <AvailabilityMacros.h>
@@ -226,6 +227,19 @@ struct Block_callbacks_RR {
 typedef struct Block_callbacks_RR Block_callbacks_RR;
 
 BLOCK_EXPORT void _Block_use_RR2(const Block_callbacks_RR *callbacks);
+
+/* Obsolete */
+
+/* first layout */
+struct Block_basic {
+    void *isa;
+    int Block_flags;  /* int32_t */
+    int Block_size;  /* XXX should be packed into Block_flags */
+    void (*Block_invoke)(void *);
+    void (*Block_copy)(void *dst, void *src);  /* iff BLOCK_HAS_COPY_DISPOSE */
+    void (*Block_dispose)(void *);             /* iff BLOCK_HAS_COPY_DISPOSE */
+    /* long params[0];  // where const imports, __block storage references, etc. get laid down */
+};
 
 
 #if __cplusplus
