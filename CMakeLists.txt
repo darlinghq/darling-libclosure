@@ -34,8 +34,9 @@ add_circular(system_blocks FAT
 		system_kernel
 		system_malloc
 		system_pthread
-		objc
 		system_c
+	UPWARD
+		objc_firstpass
 )
 add_library(system_blocks_static STATIC ${blocks_sources})
 #target_link_libraries(system_blocks PRIVATE system_kernel system_m system_malloc)
