@@ -11,7 +11,10 @@
 
 #ifndef _BLOCK_PRIVATE_H_
 #define _BLOCK_PRIVATE_H_
-#define BLOCK_EXPORT
+
+#ifndef BLOCK_EXPORT
+#define BLOCK_EXPORT extern
+#endif
 
 #include <Availability.h>
 #include <AvailabilityMacros.h>
