@@ -21,9 +21,6 @@ set(blocks_sources
 	runtime.c
 )
 
-set(CMAKE_AR "${CMAKE_BINARY_DIR}/src/external/cctools-port/cctools/ar/x86_64-apple-darwin11-ar" PARENT_SCOPE)
-set(CMAKE_RANLIB "${CMAKE_BINARY_DIR}/src/external/cctools-port/cctools/misc/ranlib" PARENT_SCOPE)
-
 set(DYLIB_INSTALL_NAME "/usr/lib/system/libsystem_blocks.dylib")
 add_circular(system_blocks FAT
 	SOURCES
@@ -36,9 +33,8 @@ add_circular(system_blocks FAT
 #	UPWARD
 #		objc_firstpass
 )
-add_library(system_blocks_static STATIC ${blocks_sources})
+add_darling_static_library(system_blocks_static SOURCES ${blocks_sources})
 #target_link_libraries(system_blocks PRIVATE system_kernel system_m system_malloc)
-add_dependencies(system_blocks_static ranlib x86_64-apple-darwin11-ar)
 
 #make_fat(system_blocks)
 make_fat(system_blocks_static)
