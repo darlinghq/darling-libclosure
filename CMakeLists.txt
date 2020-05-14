@@ -11,8 +11,7 @@ include(darling_static_lib)
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -nostdinc")
 set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -nostdlib -Wl,-flat_namespace -Wl,-undefined,suppress")
 
-include_directories(${CMAKE_SOURCE_DIR}/src/libc/darwin
-	${CMAKE_CURRENT_SOURCE_DIR})
+include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
 add_definitions(-DHAVE_STDINT_H=1)
 
