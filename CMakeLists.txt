@@ -17,7 +17,7 @@ add_definitions(-DHAVE_STDINT_H=1)
 
 set(blocks_sources
 	data.c
-	runtime.c
+	runtime.cpp
 )
 
 set(DYLIB_INSTALL_NAME "/usr/lib/system/libsystem_blocks.dylib")
