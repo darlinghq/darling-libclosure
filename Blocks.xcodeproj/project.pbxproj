@@ -19,19 +19,30 @@
 			name = "Blocks-simulator";
 			productName = "Blocks-simulator";
 		};
+		E47E9844221EB9D0006E312E /* libclosure_driverkit */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = E47E9845221EB9D0006E312E /* Build configuration list for PBXAggregateTarget "libclosure_driverkit" */;
+			buildPhases = (
+			);
+			dependencies = (
+				E47E9849221EB9D8006E312E /* PBXTargetDependency */,
+			);
+			name = libclosure_driverkit;
+			productName = Blocks_driverkit;
+		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
 		831D5AD6122788D500E4A1EC /* Block_private.h in Headers */ = {isa = PBXBuildFile; fileRef = E86E1EBF11543C0B0055083F /* Block_private.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		831D5AD7122788D500E4A1EC /* Block.h in Headers */ = {isa = PBXBuildFile; fileRef = E86E1EC011543C0B0055083F /* Block.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		831D5AD9122788D500E4A1EC /* data.c in Sources */ = {isa = PBXBuildFile; fileRef = E86E1EC111543C0B0055083F /* data.c */; };
-		831D5ADA122788D500E4A1EC /* runtime.c in Sources */ = {isa = PBXBuildFile; fileRef = E86E1EC211543C0B0055083F /* runtime.c */; };
+		831D5ADA122788D500E4A1EC /* runtime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E86E1EC211543C0B0055083F /* runtime.cpp */; };
 		96EF759B1507C27500581A2E /* data.c in Sources */ = {isa = PBXBuildFile; fileRef = E86E1EC111543C0B0055083F /* data.c */; };
-		96EF759C1507C27500581A2E /* runtime.c in Sources */ = {isa = PBXBuildFile; fileRef = E86E1EC211543C0B0055083F /* runtime.c */; };
+		96EF759C1507C27500581A2E /* runtime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E86E1EC211543C0B0055083F /* runtime.cpp */; };
 		E86E1EC311543C0B0055083F /* Block_private.h in Headers */ = {isa = PBXBuildFile; fileRef = E86E1EBF11543C0B0055083F /* Block_private.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		E86E1EC411543C0B0055083F /* Block.h in Headers */ = {isa = PBXBuildFile; fileRef = E86E1EC011543C0B0055083F /* Block.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E86E1EC511543C0B0055083F /* data.c in Sources */ = {isa = PBXBuildFile; fileRef = E86E1EC111543C0B0055083F /* data.c */; };
-		E86E1EC611543C0B0055083F /* runtime.c in Sources */ = {isa = PBXBuildFile; fileRef = E86E1EC211543C0B0055083F /* runtime.c */; };
+		E86E1EC611543C0B0055083F /* runtime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E86E1EC211543C0B0055083F /* runtime.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +60,13 @@
 			remoteGlobalIDString = D2AAC0C605546C1D00DB518D;
 			remoteInfo = Blocks;
 		};
+		E47E9848221EB9D8006E312E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC0C605546C1D00DB518D;
+			remoteInfo = Blocks;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -58,7 +76,7 @@
 		E86E1EBF11543C0B0055083F /* Block_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Block_private.h; sourceTree = "<group>"; };
 		E86E1EC011543C0B0055083F /* Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Block.h; sourceTree = "<group>"; };
 		E86E1EC111543C0B0055083F /* data.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = data.c; sourceTree = "<group>"; };
-		E86E1EC211543C0B0055083F /* runtime.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = runtime.c; sourceTree = "<group>"; };
+		E86E1EC211543C0B0055083F /* runtime.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = runtime.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				E86E1EC111543C0B0055083F /* data.c */,
-				E86E1EC211543C0B0055083F /* runtime.c */,
+				E86E1EC211543C0B0055083F /* runtime.cpp */,
 			);
 			name = Sources;
 			sourceTree = "<group>";
@@ -218,6 +236,9 @@
 					3F23D0731A4757F4008445C3 = {
 						CreatedOnToolsVersion = 6.3;
 					};
+					E47E9844221EB9D0006E312E = {
+						CreatedOnToolsVersion = 11.0;
+					};
 				};
 			};
 			buildConfigurationList = 1DEB918108733D990010E9CD /* Build configuration list for PBXProject "Blocks" */;
@@ -239,6 +260,7 @@
 				831D5AD4122788D500E4A1EC /* Blocks-bundle */,
 				96EF75951507C1CE00581A2E /* libclosure_eOS */,
 				3F23D0731A4757F4008445C3 /* Blocks-simulator */,
+				E47E9844221EB9D0006E312E /* libclosure_driverkit */,
 			);
 		};
 /* End PBXProject section */
@@ -270,7 +292,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "# This target is only here for B&I compatibility.  Cortex should be\n# updated to use the Blocks target and then this target can be\n# removed.\n\ntrue";
+			shellScript = "# This target is only here for B&I compatibility.  Cortex should be\n# updated to use the Blocks target and then this target can be\n# removed.\n\ntrue\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -280,7 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				831D5AD9122788D500E4A1EC /* data.c in Sources */,
-				831D5ADA122788D500E4A1EC /* runtime.c in Sources */,
+				831D5ADA122788D500E4A1EC /* runtime.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96EF759B1507C27500581A2E /* data.c in Sources */,
-				96EF759C1507C27500581A2E /* runtime.c in Sources */,
+				96EF759C1507C27500581A2E /* runtime.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,7 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E86E1EC511543C0B0055083F /* data.c in Sources */,
-				E86E1EC611543C0B0055083F /* runtime.c in Sources */,
+				E86E1EC611543C0B0055083F /* runtime.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +337,11 @@
 			target = D2AAC0C605546C1D00DB518D /* Blocks */;
 			targetProxy = 96FA3B6715093BCF003EABC7 /* PBXContainerItemProxy */;
 		};
+		E47E9849221EB9D8006E312E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2AAC0C605546C1D00DB518D /* Blocks */;
+			targetProxy = E47E9848221EB9D8006E312E /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -329,26 +356,32 @@
 					"$(CONFIGURATION_BUILD_DIR)/usr/local/include/**",
 				);
 				INSTALL_PATH = /usr/lib/system;
+				"INSTALL_PATH[sdk=driverkit*]" = "$(DRIVERKITROOT)/usr/lib/system";
 				OTHER_LDFLAGS = (
-					"$(OTHER_LDFLAGS)",
 					"-nostdlib",
 					"-L/usr/lib/system/",
+					"-lsystem_platform",
 					"-lsystem_malloc",
-					"-lsystem_c",
+					"-Wl,-upward-lsystem_c",
 					"-ldyld",
 					"-Wl,-umbrella,System",
 				);
-				"OTHER_LDFLAGS[sdk=iphonesimulator*]" = (
-					"-lCrashReporterClient",
+				"OTHER_LDFLAGS[sdk=driverkit*]" = (
 					"-nostdlib",
-					"-L/usr/lib/system/",
+					"-L$(DRIVERKITROOT)/usr/lib/system/",
+					"-lsystem_platform",
 					"-lsystem_malloc",
-					"-lsystem_sim_c",
+					"-Wl,-upward-lsystem_c",
 					"-ldyld",
 					"-Wl,-umbrella,System",
 				);
+				"PRIVATE_HEADERS_FOLDER_PATH[sdk=driverkit*]" = "$(DRIVERKITROOT)/Runtime/usr/local/include";
 				PRODUCT_NAME = system_blocks;
 				PUBLIC_HEADERS_FOLDER_PATH = /usr/include;
+				"PUBLIC_HEADERS_FOLDER_PATH[sdk=driverkit*]" = "$(DRIVERKITROOT)/Runtime/usr/include";
+				SUPPORTS_TEXT_BASED_API = YES;
+				"SYSTEM_HEADER_SEARCH_PATHS[sdk=driverkit*]" = "$(SDKROOT)/$(DRIVERKITROOT)/Runtime/usr/local/include $(SDKROOT)/$(DRIVERKITROOT)/Runtime/usr/include";
+				TAPI_VERIFY_MODE = ErrorsAndWarnings;
 			};
 			name = Debug;
 		};
@@ -363,26 +396,32 @@
 					"$(CONFIGURATION_BUILD_DIR)/usr/local/include/**",
 				);
 				INSTALL_PATH = /usr/lib/system;
+				"INSTALL_PATH[sdk=driverkit*]" = "$(DRIVERKITROOT)/usr/lib/system";
 				OTHER_LDFLAGS = (
-					"$(OTHER_LDFLAGS)",
 					"-nostdlib",
 					"-L/usr/lib/system/",
+					"-lsystem_platform",
 					"-lsystem_malloc",
-					"-lsystem_c",
+					"-Wl,-upward-lsystem_c",
 					"-ldyld",
 					"-Wl,-umbrella,System",
 				);
-				"OTHER_LDFLAGS[sdk=iphonesimulator*]" = (
-					"-lCrashReporterClient",
+				"OTHER_LDFLAGS[sdk=driverkit*]" = (
 					"-nostdlib",
-					"-L/usr/lib/system/",
+					"-L$(DRIVERKITROOT)/usr/lib/system/",
+					"-lsystem_platform",
 					"-lsystem_malloc",
-					"-lsystem_sim_c",
+					"-Wl,-upward-lsystem_c",
 					"-ldyld",
 					"-Wl,-umbrella,System",
 				);
+				"PRIVATE_HEADERS_FOLDER_PATH[sdk=driverkit*]" = "$(DRIVERKITROOT)/Runtime/usr/local/include";
 				PRODUCT_NAME = system_blocks;
 				PUBLIC_HEADERS_FOLDER_PATH = /usr/include;
+				"PUBLIC_HEADERS_FOLDER_PATH[sdk=driverkit*]" = "$(DRIVERKITROOT)/Runtime/usr/include";
+				SUPPORTS_TEXT_BASED_API = YES;
+				"SYSTEM_HEADER_SEARCH_PATHS[sdk=driverkit*]" = "$(SDKROOT)/$(DRIVERKITROOT)/Runtime/usr/local/include $(SDKROOT)/$(DRIVERKITROOT)/Runtime/usr/include";
+				TAPI_VERIFY_MODE = ErrorsAndWarnings;
 			};
 			name = Release;
 		};
@@ -395,6 +434,7 @@
 					debug,
 					normal,
 				);
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = "$(RC_ProjectSourceVersion)";
@@ -411,7 +451,7 @@
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_PARAMETER = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				OTHER_LDFLAGS = "-lCrashReporterClient";
+				IS_ZIPPERED = YES;
 				PREBINDING = NO;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)";
 				USE_HEADERMAP = NO;
@@ -432,6 +472,7 @@
 					debug,
 					normal,
 				);
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
 				CURRENT_PROJECT_VERSION = "$(RC_ProjectSourceVersion)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -447,9 +488,9 @@
 				GCC_WARN_UNUSED_LABEL = YES;
 				GCC_WARN_UNUSED_PARAMETER = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IS_ZIPPERED = YES;
 				"OTHER_CFLAGS[arch=i386]" = "-momit-leaf-frame-pointer";
 				"OTHER_CFLAGS[arch=x86_64]" = "-momit-leaf-frame-pointer";
-				OTHER_LDFLAGS = "-lCrashReporterClient";
 				PREBINDING = NO;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)";
 				USE_HEADERMAP = NO;
@@ -487,6 +528,8 @@
 				INSTALL_PATH = "$(INDIGO_INSTALL_PATH_PREFIX)/usr/local/lib/system";
 				PRODUCT_NAME = closure;
 				PUBLIC_HEADERS_FOLDER_PATH = /usr/include;
+				SUPPORTS_TEXT_BASED_API = YES;
+				TAPI_VERIFY_MODE = ErrorsAndWarnings;
 			};
 			name = Debug;
 		};
@@ -502,6 +545,8 @@
 				INSTALL_PATH = "$(INDIGO_INSTALL_PATH_PREFIX)/usr/local/lib/system";
 				PRODUCT_NAME = closure;
 				PUBLIC_HEADERS_FOLDER_PATH = /usr/include;
+				SUPPORTS_TEXT_BASED_API = YES;
+				TAPI_VERIFY_MODE = ErrorsAndWarnings;
 			};
 			name = Release;
 		};
@@ -522,6 +567,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				INSTALL_PATH = /usr/local/lib/eOS;
 				PRODUCT_NAME = libclosure;
+				SUPPORTS_TEXT_BASED_API = YES;
+				TAPI_VERIFY_MODE = ErrorsAndWarnings;
 			};
 			name = Debug;
 		};
@@ -535,6 +582,24 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				INSTALL_PATH = /usr/local/lib/eOS;
 				PRODUCT_NAME = libclosure;
+				SUPPORTS_TEXT_BASED_API = YES;
+				TAPI_VERIFY_MODE = ErrorsAndWarnings;
+			};
+			name = Release;
+		};
+		E47E9846221EB9D0006E312E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E47E9847221EB9D0006E312E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -582,6 +647,15 @@
 			buildConfigurations = (
 				96EF75971507C1CE00581A2E /* Debug */,
 				96EF75981507C1CE00581A2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E47E9845221EB9D0006E312E /* Build configuration list for PBXAggregateTarget "libclosure_driverkit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E47E9846221EB9D0006E312E /* Debug */,
+				E47E9847221EB9D0006E312E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
