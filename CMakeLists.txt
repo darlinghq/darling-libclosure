@@ -34,6 +34,8 @@ add_circular(system_blocks FAT
 #		objc_firstpass
 )
 add_darling_static_library(system_blocks_static SOURCES ${blocks_sources})
+set_property(TARGET system_blocks_static APPEND_STRING PROPERTY
+	COMPILE_FLAGS " -fPIC -fno-stack-check -fno-stack-protector")
 #target_link_libraries(system_blocks PRIVATE system_kernel system_m system_malloc)
 
 #make_fat(system_blocks)
