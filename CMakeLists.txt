@@ -17,6 +17,7 @@ add_definitions(-DHAVE_STDINT_H=1)
 
 set(blocks_sources
 	data.c
+	data.m
 	runtime.cpp
 )
 
