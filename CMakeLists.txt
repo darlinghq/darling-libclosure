@@ -29,6 +29,7 @@ add_circular(system_blocks FAT
 		system_kernel
 		system_malloc
 		system_pthread
+		platform
 		system_c
 #	UPWARD
 #		objc_firstpass
