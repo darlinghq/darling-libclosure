@@ -8,6 +8,8 @@
  *
  */
 
+#include "blocks_objc.h"
+
 #if !HAVE_OBJC
 
 /********************
