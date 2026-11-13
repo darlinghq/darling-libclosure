@@ -8,6 +8,8 @@
  *
  */
 
+#include "blocks_objc.h"
+
 #if HAVE_OBJC
 
 /*
@@ -18,7 +20,7 @@
  * __NSAutoBlock__ and __NSGlobalBlock__.
  */
 
-#include <Foundation/NSObject.h>
+#include <objc/NSObject.h>
 #include "Block_private.h"
 
 // the class for stack instances created by block expressions
@@ -88,7 +90,7 @@ __attribute__((objc_nonlazy_class, visibility("hidden")))
     return self;
 }
 
-- (id)copyWithZone:(NSZone *)zone {
+- (id)copyWithZone:(struct _NSZone *)zone {
     (void)zone;
     return self;
 }
@@ -142,7 +144,7 @@ __attribute__((objc_nonlazy_class, visibility("hidden")))
     return self;
 }
 
-- (id)copyWithZone:(NSZone *)zone {
+- (id)copyWithZone:(struct _NSZone *)zone {
     (void)zone;
     return self;
 }
