@@ -40,8 +40,10 @@ add_circular(system_blocks FAT
 # 32-bit slice has no Objective-C classes here (see blocks_objc.h), so the alias list applies to the 64-bit
 # slice only.
 foreach(target system_blocks system_blocks_firstpass)
-	set_property(TARGET ${target} APPEND_STRING PROPERTY
-		LINK_FLAGS " -Xarch_${APPLE_ARCH_64BIT} -Wl,-alias_list,${CMAKE_CURRENT_SOURCE_DIR}/Blocks.alias")
+	foreach(arch64 IN LISTS APPLE_ARCH_64BIT_LIST)
+		set_property(TARGET ${target} APPEND_STRING PROPERTY
+			LINK_FLAGS " -Xarch_${arch64} -Wl,-alias_list,${CMAKE_CURRENT_SOURCE_DIR}/Blocks.alias")
+	endforeach()
 endforeach()
 
 # The static library is linked into code that has no Objective-C runtime (dyld), so it has no classes.
