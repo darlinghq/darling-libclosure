@@ -35,13 +35,21 @@ add_circular(system_blocks FAT
 #		objc_firstpass
 )
 
-# The dylib defines the Objective-C classes of Block objects in its 64-bit slices (data.m). The linker names the
-# class symbols as the _NSConcrete*Block symbols that compiled Blocks use as their isa (Blocks.alias). The
-# 32-bit slice has no Objective-C classes here (see blocks_objc.h), so the alias list applies to the 64-bit
-# slice only.
+# The dylib defines the Objective-C classes of Block objects in the slices with the modern Objective-C runtime
+# (data.m). The linker names the class symbols as the _NSConcrete*Block symbols that compiled Blocks use as their
+# isa (Blocks.alias). The slices with the legacy runtime (i386) have no Objective-C classes here (see
+# blocks_objc.h), so the alias list applies to the other slices only.
+set(blocks_modern_objc_archs "")
+foreach(arch IN LISTS DARLING_ARCHS)
+	darling_arch_objc_abi(${arch} objc_abi)
+	if (objc_abi STREQUAL "modern")
+		list(APPEND blocks_modern_objc_archs ${arch})
+	endif()
+endforeach()
+darling_xarch_flags(blocks_alias_flags ARCHS ${blocks_modern_objc_archs}
+	OPTIONS "-Wl,-alias_list,${CMAKE_CURRENT_SOURCE_DIR}/Blocks.alias")
 foreach(target system_blocks system_blocks_firstpass)
-	set_property(TARGET ${target} APPEND_STRING PROPERTY
-		LINK_FLAGS " -Xarch_${APPLE_ARCH_64BIT} -Wl,-alias_list,${CMAKE_CURRENT_SOURCE_DIR}/Blocks.alias")
+	set_property(TARGET ${target} APPEND_STRING PROPERTY LINK_FLAGS " ${blocks_alias_flags}")
 endforeach()
 
 # The static library is linked into code that has no Objective-C runtime (dyld), so it has no classes.
