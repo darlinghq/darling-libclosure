@@ -27,7 +27,13 @@
 #endif
 
 #ifndef __ptrauth_objc_isa_pointer
+#if __has_feature(ptrauth_calls)
+/* objc isa signing: key DA, address-diversified, discriminator ISA_SIGNING_DISCRIMINATOR
+ * (0x6AE1) from objc4 runtime/objc-config.h */
+#define __ptrauth_objc_isa_pointer __ptrauth(2, 1, 0x6AE1)
+#else
 #define __ptrauth_objc_isa_pointer
+#endif
 #endif
 
 #if __has_feature(ptrauth_calls) &&  __cplusplus < 201103L
@@ -70,7 +76,7 @@
 // storage as extra data.
 // Function pointers inside block objects are signed this way.
 template <typename Fn, ptrauth_key Key>
-class StorageSignedFunctionPointer {
+class __attribute__((visibility("hidden"))) StorageSignedFunctionPointer {
     uintptr_t bits;
 
  public:
